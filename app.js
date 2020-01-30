@@ -4,6 +4,7 @@ var passport=require('passport');
 var LocalStrategy=require('passport-local');
 var app=express();
 var bodyParser=require('body-parser');
+var methodOverride = require("method-override");
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 mongoose.set('useUnifiedTopology', true);
@@ -14,6 +15,7 @@ var Comment=require("./models/comment");
 
 var seedDb=require("./seeds");
 
+app.use(methodOverride("_method"));
 
 //seedDb();
 //PASSPORT CONFIG
