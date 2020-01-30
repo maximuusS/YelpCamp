@@ -15,7 +15,7 @@ var Comment=require("./models/comment");
 var seedDb=require("./seeds");
 
 
-seedDb();
+//seedDb();
 //PASSPORT CONFIG
 
 //ROUTES

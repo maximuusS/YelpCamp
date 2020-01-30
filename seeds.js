@@ -28,29 +28,29 @@ function seedDb(){
 			console.log(err);
 		console.log("Removed campgrounds");
 			
-			//add few campgrounds
-		data.forEach(function(seed){
-			Campground.create(seed,function(err,campground){
-				if(err)
-					console.log(err)
-				else
-					console.log("Added");
-				//create comment
-				Comment.create({
-					text:"This place is great",
-					author:"Homer"
-				},function(err, commen){
-					if(err)
-						console.log(err);
-					else
-						campground.comments.push(commen);
-						campground.save();
-						console.log("comment added");
+		// 	//add few campgrounds
+		// data.forEach(function(seed){
+		// 	Campground.create(seed,function(err,campground){
+		// 		if(err)
+		// 			console.log(err)
+		// 		else
+		// 			console.log("Added");
+		// 		//create comment
+		// 		Comment.create({
+		// 			text:"This place is great",
+		// 			author:"Homer"
+		// 		},function(err, commen){
+		// 			if(err)
+		// 				console.log(err);
+		// 			else
+		// 				campground.comments.push(commen);
+		// 				campground.save();
+		// 				console.log("comment added");
 				
-				});
-			});
+		// 		});
+		// 	});
 			
-		});
+		// });
 	});
 	
 }
