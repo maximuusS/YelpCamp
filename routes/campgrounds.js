@@ -25,12 +25,13 @@ router.post("/campgrounds",middleware.isLoggedIn,function(req,res){
 	var name=req.body.name;
 	var description=req.body.description;
 	var image=req.body.image;
+	var price=req.body.price;
 	var author = {
 		id:req.user._id,
 		username:req.user.username
 	}; 	
 	var newCampground={
-		name: name, image:image, description:description , author:author
+		name: name, image:image, description:description , author:author ,price:price
 	};
 	//campgrounds.push(newCampground);
 	Campground.create(newCampground,function(err,newlyCreated){
