@@ -11,3 +11,12 @@
 .delete-form{
 	display: inline;
 }
+.mobile{
+	width:30%; margin:30px auto;
+}
+
+@media (max-width: 1028px)  {
+    .mobile {
+        width: 50%;
+    }
+}
