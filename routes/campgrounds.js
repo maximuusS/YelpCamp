@@ -1,5 +1,6 @@
 var express= require("express");
 var router = express.Router();
+var moment=require('moment');
 var Campground = require("../models/campground"); 
 var middleware = require("../middleware"); // will auto require index.js
 
@@ -12,7 +13,8 @@ router.get("/campgrounds",function(req,res){
 		}else{
 			res.render("campgrounds/index",{
 		campgrounds: campgrounds,
-		currentUser:req.user
+		currentUser:req.user,
+		moment: moment
 	});
 		}
 	});
@@ -64,7 +66,8 @@ router.get("/campgrounds/:id",function(req,res){
             console.log(foundCamp);
             res.render("campgrounds/show",{
                 campground:foundCamp,
-                currentUser:req.user
+				currentUser:req.user,
+				moment : moment
             });
         }
     });

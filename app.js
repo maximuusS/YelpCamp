@@ -1,6 +1,7 @@
 var express =require('express');
 var mongoose =require('mongoose');
 var passport=require('passport');
+var moment=require('moment');
 var LocalStrategy=require('passport-local');
 var flash = require("connect-flash");
 var bodyParser=require('body-parser');
@@ -10,15 +11,15 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 mongoose.set('useUnifiedTopology', true);
 
-//mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true });
-mongoose.connect('mongodb+srv://saurav:savelion@cluster0-emdzj.mongodb.net/test?retryWrites=true&w=majority', {
-	 useNewUrlParser: true,
-	 useCreateIndex: true
-	 }).then(()=>{
-		 console.log("DB connected");
-	 }).catch(err =>{
-		 console.log("Error",err.message);
-	 });
+mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true });
+// mongoose.connect('mongodb+srv://saurav:savelion@cluster0-emdzj.mongodb.net/test?retryWrites=true&w=majority', {
+// 	 useNewUrlParser: true,
+// 	 useCreateIndex: true
+// 	 }).then(()=>{
+// 		 console.log("DB connected");
+// 	 }).catch(err =>{
+// 		 console.log("Error",err.message);
+// 	 });
 
 var User= require("./models/user");
 var Campground=require("./models/campground");
